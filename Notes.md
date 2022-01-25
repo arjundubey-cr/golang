@@ -14,7 +14,7 @@
    1. Case insensitive; almost
    2. Variable type should be knows in advance
    3. Everything is a type
-   4. Umm.. What are types?
+   4. So.. What are types?
       1. String
       2. Bool
       3. Integer: uint8, uint64, int8, int64, uintptr (both signed and unsigned, aliases are involved too)
@@ -22,3 +22,10 @@
       5. Complex 
       6. Array, Slice, Maps, Structs, Pointers
       7. Functions, Channels etc.
+   5. We can declare variable in the following syntax:
+            var <VARIABLE_NAME> <VARIABLE_TYPE> = <VALUE>;
+                        OR
+            var <VARIABLE_NAME> = <VALUE>
+                        OR
+            <VARIABLE_NAME> := <VALUE>
+   
