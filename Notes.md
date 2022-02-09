@@ -38,16 +38,38 @@
 
 ### 5. Handling Time
    - There are some constants in time values which are used in Go to specify formats, eg:
-   - ```
-      Default format: 2015-02-25 11:06:39 -0800 PST
-      Unix format: Wed Feb 25 11:06:39 PST 2015
-      Same, in UTC: Wed Feb 25 19:06:39 UTC 2015
+      ```
+         Default format: 2015-02-25 11:06:39 -0800 PST
+         Unix format: Wed Feb 25 11:06:39 PST 2015
+         Same, in UTC: Wed Feb 25 19:06:39 UTC 2015
 
-      Formats:
+         Formats:
 
-      Basic full date  "Mon Jan 2 15:04:05 MST 2006" gives "Wed Feb 25 11:06:39 PST 2015"
-      Basic short date "2006/01/02" gives "2015/02/25"
-      AM/PM            "3PM==3pm==15h" gives "11AM==11am==11h"
-      No fraction      "Mon Jan _2 15:04:05 MST 2006" gives "Wed Feb 25 11:06:39 PST 2015"
-      0s for fraction  "15:04:05.00000" gives "11:06:39.12340"
-      9s for fraction  "15:04:05.99999999" gives "11:06:39.1234" 
+         Basic full date  "Mon Jan 2 15:04:05 MST 2006" gives "Wed Feb 25 11:06:39 PST 2015"
+         Basic short date "2006/01/02" gives "2015/02/25"
+         AM/PM            "3PM==3pm==15h" gives "11AM==11am==11h"
+         No fraction      "Mon Jan _2 15:04:05 MST 2006" gives "Wed Feb 25 11:06:39 PST 2015"
+         0s for fraction  "15:04:05.00000" gives "11:06:39.12340"
+         9s for fraction  "15:04:05.99999999" gives "11:06:39.1234" 
+<br/>
+
+- **go env** :Gives a lot information about the environment
+- **GOOS="windows" go build** By specifying the GOOS we can build for different operating system environment
+
+### 6. Memory Management in Golang
+
+- Memory allocation and deallocation happens automatically in go.
+- *new()*
+  - Allocate memory but no INIT
+  - will get memory address
+  - zeroed storage (Can't put data initially)
+- *make()*
+  - allocate + INIT
+  - will get memory address
+  - non-zeroed storage (We can put data initially)
+- Garbage collection happens automatically
+
+**Pointers**
+   - Pointers gives surity that we pass in actual value of the variable instead of a copy. A pointer is nothing but a direct reference of memory use case.
+   - To declare 
+     - `var ptr *int`
