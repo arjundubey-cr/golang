@@ -138,4 +138,27 @@ This helps us to see that the declarations are block scoped.
   c := a[:len(a)-1] //remove last ele
   d := append(a[:2], a[3:]...) //remove ele at 4
 
-## Maps
+## Maps and Structs
+
+### Maps
+```go
+  statePopulation := map[string]int {
+    "California": 39250017,
+    "Texas": 27862596,
+  }
+```
+- Collectin of values that are accessed via keys
+- Created via literals or via **make** function
+- Members accessed via [key] syntax
+- Check for presence with "value, ok" form of result
+- Maps are **passed by reference** so the changes done in the copies of the data will be reflected in original data as well.
+- An array is a valid keytype but a slice is not a valid keytype.
+
+### Struct
+- Collections of disparate data types that describes a single concept
+- Keyed by named fields
+- Normally created as types, but anonymous structs are allowed
+- Struct are value types
+- No inheritance but can use composition via embedding
+- Tags can be added to struct fields to describe field
+
