@@ -162,3 +162,10 @@ This helps us to see that the declarations are block scoped.
 - No inheritance but can use composition via embedding
 - Tags can be added to struct fields to describe field
 
+## Defer, Panic and Recover
+
+### Defer
+- Defer is executed in LIFO order.
+- Executed after the main function has finished execution but before it returns.
+- Defer can be used to have opening of resource and close of resource right next to each other.
+- 
