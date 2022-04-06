@@ -167,5 +167,58 @@ This helps us to see that the declarations are block scoped.
 ### Defer
 - Defer is executed in LIFO order.
 - Executed after the main function has finished execution but before it returns.
-- Defer can be used to have opening of resource and close of resource right next to each other.
-- 
+- Defer can be used to have opening of resource and close of resource right next to each other. *Be careful in loops*.
+- Arguments evaluated at time defer is executed, not at the time of called function execution.
+
+### Panic
+- Handling the state which can't be recovered.
+  - Don't use when file can't be opened, unless it is critical.
+  - Use for unrecoverable events.
+- Function will stop executiong but defer function will still fire.
+- If nothing handles panic, program will exit.
+  
+### Recover
+- Used to recover from panics
+- Only useful in deferred functions
+- Current function will not attempt to continue, but higher functions will start to execute.
+
+## Pointer
+- Pointer type are declared using *** and assigned values using the *&*
+- We can use the addressof operator(&) if value type already exists
+  - ms := myStruct{foo: 42}
+  - p := &ms
+- Use addressof before initializer
+  - &myStruct{foo: 42}
+- Use the new keyword
+  - Can't initialize fields at the same time.
+- Types with internal pointers
+  - All assignment operations in Go are copy operations.
+  - Slices and maps contain internal pointers.
+
+## Functions
+- Basic syntax
+  - ```go
+      func foo() {
+        ...
+      }
+
+- Parameters
+    - Comma delimited list of variables and types
+      - func foo(bar string, baz int)
+    - Parameters of same type list type once
+      - func foo(bar, baz int)
+    - When pointers are passed in, the function can change the value in the caller
+      - This is always true for data of slices and maps
+- Return Values
+  - Single return value
+  - Multiple return value
+    - func foo() (int, error)
+    - the (result type, error) paradigm is a very common idiom
+  
+- Anonymous Function
+
+## Interfaces
+- Interface are a type
+- type Writer interface {
+      
+  }
